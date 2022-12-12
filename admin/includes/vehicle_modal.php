@@ -9,6 +9,21 @@
           	</div>
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="vehicle_add.php">
+                <div class="form-group">
+                  <label for="customer_document" class="col-sm-3 control-label">Cédula<span class="text-danger "> * </span></label>
+
+                  <div class="col-sm-9">
+                    <input class="form-control" type="text" name="customer_document" id="customer_document" placeholder="V-39067823">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="customer" class="col-sm-3 control-label">Cliente<span class="text-danger "> * </span></label>
+
+                  <div class="col-sm-9">
+                    <input type="hidden" name="customer" id="customer">
+                    <input class="form-control" type="text" name="customer_info" id="customer_info" value="No encontrado" readonly>
+                  </div>
+                </div>
           		  <div class="form-group">
                   	<label for="patent" class="col-sm-3 control-label">Matricula<span class="text-danger "> * </span></label>
 
@@ -50,21 +65,6 @@
                   	<div class="col-sm-9">
                     	<input type="text" class="form-control" id="chassis" name="chassis" required placeholder="Ej. 123-CHA" >
                   	</div>
-                </div>
-                <div class="form-group">
-                  <label for="customer_document" class="col-sm-3 control-label">Cédula<span class="text-danger "> * </span></label>
-
-                  <div class="col-sm-9">
-                    <input class="form-control" type="text" name="customer_document" id="customer_document" placeholder="V-39067823">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="customer" class="col-sm-3 control-label">Cliente<span class="text-danger "> * </span></label>
-
-                  <div class="col-sm-9">
-                    <input type="hidden" name="customer" id="customer">
-                    <input class="form-control" type="text" name="customer_info" id="customer_info" value="No encontrado" readonly>
-                  </div>
                 </div>
                 <div class="form-group">
                     <label for="status" class="col-sm-3 control-label">Estado<span class="text-danger "> * </span></label>
