@@ -1,0 +1,23 @@
+
+
+
+h3 {
+    font-family: 'Share Tech Mono', monospace;
+
+    font-size: 15px;
+
+}
+
+h1 {
+    font-family: 'Share Tech Mono', monospace;
+    color: black;
+    font-size: 35px;
+    text-shadow: 0 0 20px rgba(105,105, 105,1), 0 0 20px rgba(10,175, 230,0) ;
+}
+
+a{
+    font-family: 'Share Tech Mono', monospace;
+    color: black;
+    font-size: 25px;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.877), 0 0 20px rgba(10,175, 230,0) ;
+}
