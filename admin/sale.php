@@ -47,7 +47,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-body">
-              <table id="example1" class="table table-bordered">
+              <table id="example10" class="table table-bordered">
                 <thead>
                   <th>ID Reparacion</th>
                   <th>Cliente</th>
@@ -94,5 +94,27 @@
   <?php include 'includes/customer_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
+<script> 
+    $('#example10').DataTable( {
+      reponsive: true,
+      autoWidth: false,
+
+        "language": {
+          "lengthMenu": "Mostrar _MENU_ entradas",
+          "zeroRecords": "Nada encontrado - disculpa",
+          "info": "Mostrando la página _PAGE_ de _PAGES_",
+          "infoEmpty": "No hay registros disponibles",
+          "infoFiltered": "(filtrado de _MAX_ registros totales)",
+          "search":"Buscar:",
+          "paginate": {
+            "first":    "Primero",
+            "last":     "Último",
+            "next":     "Siguiente",
+            "previous": "Anterior"
+          },
+        } 
+      }
+    );
+</script>
 </body>
 </html>

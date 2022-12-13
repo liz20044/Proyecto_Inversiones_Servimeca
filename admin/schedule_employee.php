@@ -50,7 +50,7 @@
               <a href="schedule_print.php" class="btn btn-success btn-sm btn-flat"><span class="glyphicon glyphicon-print"></span> Imprimir</a>
             </div>
             <div class="box-body">
-              <table id="example1" class="table table-bordered">
+              <table id="example3" class="table table-bordered">
                 <thead>
                   <th>Cédula</th>
                   <th>Nombre</th>
@@ -111,6 +111,28 @@ function getRow(id){
     }
   });
 }
+</script>
+<script> 
+    $('#example3').DataTable( {
+      reponsive: true,
+      autoWidth: false,
+
+        "language": {
+          "lengthMenu": "Mostrar _MENU_ entradas",
+          "zeroRecords": "Nada encontrado - disculpa",
+          "info": "Mostrando la página _PAGE_ de _PAGES_",
+          "infoEmpty": "No hay registros disponibles",
+          "infoFiltered": "(filtrado de _MAX_ registros totales)",
+          "search":"Buscar:",
+          "paginate": {
+            "first":    "Primero",
+            "last":     "Último",
+            "next":     "Siguiente",
+            "previous": "Anterior"
+          },
+        } 
+      }
+    );
 </script>
 </body>
 </html>
