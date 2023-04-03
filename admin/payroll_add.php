@@ -17,7 +17,6 @@
         $date_pay = $_POST['date_pay'];
 
         $sql = "SELECT *, files.id AS filid FROM files LEFT JOIN employees ON employees.id=files.employee_id";
-
         $stmt = $conn->query($sql);
         $files = [];
 
@@ -31,14 +30,12 @@
                 if ((int)$details['type'] === 1) {
                     $amount = ($details['amount']) * -1;
                     $sql = "INSERT INTO payroll (payroll_id, date_pay, employee_id, amount) VALUES ('$payroll_id', '$date_pay', '" . $file['id'] . "', '$amount')";
-
                     $conn->query($sql);
                 }
 
                 if ((int)$details['type'] === 2) {
                     $amount = ($details['amount']);
                     $sql = "INSERT INTO payroll (payroll_id, date_pay, employee_id, amount) VALUES ('$payroll_id', '$date_pay', '" . $file['id'] . "', '$amount')";
-
                     $conn->query($sql);
                 }
             }

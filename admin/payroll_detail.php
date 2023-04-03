@@ -11,12 +11,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Detalle de Nomina
+        Detalle de Nómina
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li>Nomina</li>
-        <li class="active">Detalle de Nomina</li>
+        <li class="active">Detalle de Nómina</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -47,12 +47,12 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header text-center">
-                <h3>Datos de la Nomina</h3>
+                <h3>Datos de la Nómina</h3>
             </div>
             <div class="box-body">
               <table class="table table-bordered">
                 <thead>
-                  <th>ID Nomina</th>
+                  <th>ID Nómina</th>
                   <th>Fecha de pago</th>
                   <th>Monto</th>
                 </thead>
@@ -80,10 +80,10 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header text-center">
-                <h3>Listado del detalle de nomina</h3>
+                <h3>Listado del detalle de nómina</h3>
             </div>
             <div class="box-body">
-              <table id="example1" class="table table-bordered">
+              <table id="example18" class="table table-bordered">
                 <thead>
                   <th>Empleado</th>
                   <th>Acciones</th>
@@ -115,5 +115,27 @@
   <?php include 'includes/footer.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
+<script> 
+    $('#example18').DataTable( {
+      reponsive: true,
+      autoWidth: false,
+
+        "language": {
+          "lengthMenu": "Mostrar _MENU_ entradas",
+          "zeroRecords": "Nada encontrado - disculpa",
+          "info": "Mostrando la página _PAGE_ de _PAGES_",
+          "infoEmpty": "No hay registros disponibles",
+          "infoFiltered": "(filtrado de _MAX_ registros totales)",
+          "search":"Buscar:",
+          "paginate": {
+            "first":    "Primero",
+            "last":     "Último",
+            "next":     "Siguiente",
+            "previous": "Anterior"
+          },
+        } 
+      }
+    );
+</script>
 </body>
 </html>

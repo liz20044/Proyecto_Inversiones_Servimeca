@@ -13,7 +13,7 @@
                   	<label for="employee" class="col-sm-3 control-label">Cédula<span class="text-danger "> * </span></label>
 
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="employee" name="employee" required placeholder="V-30544820">
+                    	<input type="text" class="form-control" id="employee" name="employee" required placeholder="V-30544820"  maxlength="10">
                   	</div>
                 </div>
                 <div class="form-group">
@@ -21,7 +21,7 @@
 
                     <div class="col-sm-9"> 
                       <div class="date">
-                        <input type="text" class="form-control" id="datepicker_add" name="date" required placeholder="Ej. 2002-02-20">
+                        <input type="text" class="form-control" id="datepicker_add" name="date" required placeholder="Ej. 2002-02-20"  maxlength="20">
                       </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
 
                   	<div class="col-sm-9">
                   		<div class="bootstrap-timepicker">
-                    		<input type="text" class="form-control timepicker" id="time_in" name="time_in">
+                    		<input type="text" required class="form-control timepicker" id="time_in" name="time_in"  maxlength="10">
                     	</div>
                   	</div>
                 </div>
@@ -39,7 +39,7 @@
 
                   	<div class="col-sm-9">
                   		<div class="bootstrap-timepicker">
-                    		<input type="text" class="form-control timepicker" id="time_out" name="time_out">
+                    		<input type="text" required class="form-control timepicker" id="time_out" name="time_out"  maxlength="10">
                     	</div>
                   	</div>
                 </div>
@@ -71,7 +71,7 @@
 
                     <div class="col-sm-9"> 
                       <div class="date">
-                        <input type="text" class="form-control" id="datepicker_edit" name="edit_date">
+                        <input type="text" required class="form-control" id="datepicker_edit" name="edit_date"  maxlength="20">
                       </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
 
                   	<div class="col-sm-9">
                   		<div class="bootstrap-timepicker">
-                    		<input type="text" class="form-control timepicker" id="edit_time_in" name="edit_time_in">
+                    		<input type="text" required class="form-control timepicker" id="edit_time_in" name="edit_time_in"  maxlength="10">
                     	</div>
                   	</div>
                 </div>
@@ -89,7 +89,7 @@
 
                   	<div class="col-sm-9">
                   		<div class="bootstrap-timepicker">
-                    		<input type="text" class="form-control timepicker" id="edit_time_out" name="edit_time_out">
+                    		<input type="text" required class="form-control timepicker" id="edit_time_out" name="edit_time_out"  maxlength="10">
                     	</div>
                   	</div>
                 </div>

@@ -61,7 +61,7 @@
                 </thead>
                 <tbody>
                   <?php
-                    $sql = "SELECT *, employees.id AS empid FROM employees LEFT JOIN position ON position.id=employees.position_id LEFT JOIN schedules ON schedules.id=employees.schedule_id";
+                    $sql = "SELECT *, employees.id AS empid FROM employees LEFT JOIN schedules ON schedules.id=employees.schedule_id";
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
                       ?>
@@ -126,14 +126,13 @@ function getRow(id){
       $('.empid').val(response.empid);
       $('.employee_id').html(response.employee_id);
       $('.del_employee_name').html(response.firstname+' '+response.lastname);
-      $('#employee_name').html(response.firstname+' '+response.lastname);
+      $('#edit_employee').val(response.employee_id).html(response.employee_id);
       $('#edit_firstname').val(response.firstname);
       $('#edit_lastname').val(response.lastname);
       $('#edit_address').val(response.address);
       $('#datepicker_edit').val(response.birthdate);
       $('#edit_contact').val(response.contact_info);
       $('#gender_val').val(response.gender).html(response.gender);
-      $('#position_val').val(response.position_id).html(response.description);
       $('#schedule_val').val(response.schedule_id).html(response.time_in+' - '+response.time_out);
     }
   });

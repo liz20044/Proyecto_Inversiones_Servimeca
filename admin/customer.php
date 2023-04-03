@@ -6,9 +6,7 @@
   <?php include 'includes/navbar.php'; ?>
   <?php include 'includes/menubar.php'; ?>
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
         Lista de Clientes
@@ -19,7 +17,6 @@
         <li class="active">Lista de Clientes</li>
       </ol>
     </section>
-    <!-- Main content -->
     <section class="content">
       <?php
         if(isset($_SESSION['error'])){

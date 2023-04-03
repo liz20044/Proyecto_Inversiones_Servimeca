@@ -11,12 +11,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Detalle de Reparacion
+        Detalle de Reparación
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li>Reparaciones</li>
-        <li class="active">Detalle de Reparacion</li>
+        <li class="active">Detalle de Reparación</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -46,26 +46,27 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
-            <div class="box-header text-center">
-                <h3>Datos de la Reparacion</h3>
+            <div class="box-header"> 
+              <a href="customer_receipt.php?sale=<?= $_GET['sale'] ?>" class="btn btn-success btn-sm btn-flat"><span class="glyphicon glyphicon-print"></span> Imprimir</a>
+                <h3 class="text-center">Datos de la Reparación</h3>
             </div>
             <div class="box-body">
               <table class="table table-bordered">
                 <thead>
-                  <th>ID Reparacion</th>
+                  <th>ID Reparación</th>
                   <th>Cliente</th>
-                  <th>Vehiculo</th>
+                  <th>Vehículo</th>
                   <th>Creado</th>
-                  <th>Total VES</th>
+                  <th>Total BS</th>
                   <th>Total USD</th>
-                  <th>Metodo de pago</th>
+                  <th>Método de pago</th>
                   <th>Referencia de pago</th>
                 </thead>
                 <tbody>
                   <?php
                     $sql = "SELECT *, sales.id AS salid FROM sales LEFT JOIN customers ON customers.id=sales.customer_id LEFT JOIN vehicles ON vehicles.id=sales.vehicle_id WHERE sales.id = '" . $_GET['sale'] . "'";
                     $query = $conn->query($sql);
-                    while($row = $query->fetch_assoc()){
+                    $row = $query->fetch_assoc();
                       ?>
                         <tr>
                           <td><?php echo $row['sale_id']; ?></td>
@@ -78,7 +79,6 @@
                           <td><?php echo $row['pay_reference'] ?></td>
                         </tr>
                       <?php
-                    }
                   ?>
                 </tbody>
               </table>
@@ -90,14 +90,14 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header text-center">
-                <h3>Listado del detalle de Reparacion</h3>
+                <h3>Listado del detalle de Reparación</h3>
             </div>
             <div class="box-body">
-              <table id="example1" class="table table-bordered">
+              <table id="example19" class="table table-bordered">
                 <thead>
                   <th>ID Servicio</th>
                   <th>Nombre</th>
-                  <th>Precio VES</th>
+                  <th>Precio BS</th>
                   <th>Precio USD</th>
                   <th>Estado</th>
                 </thead>
@@ -129,6 +129,28 @@
   <?php include 'includes/footer.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
+<script> 
+    $('#example19').DataTable( {
+      reponsive: true,
+      autoWidth: false,
+
+        "language": {
+          "lengthMenu": "Mostrar _MENU_ entradas",
+          "zeroRecords": "Nada encontrado - disculpa",
+          "info": "Mostrando la página _PAGE_ de _PAGES_",
+          "infoEmpty": "No hay registros disponibles",
+          "infoFiltered": "(filtrado de _MAX_ registros totales)",
+          "search":"Buscar:",
+          "paginate": {
+            "first":    "Primero",
+            "last":     "Último",
+            "next":     "Siguiente",
+            "previous": "Anterior"
+          },
+        } 
+      }
+    );
+</script>
 </body>
 </html>
 

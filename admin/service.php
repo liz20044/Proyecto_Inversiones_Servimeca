@@ -52,10 +52,9 @@
             <div class="box-body">
               <table id="example9" class="table table-bordered">
                 <thead>
-                  <th>ID Service</th>
+                  <th>ID Servicio</th>
                   <th>Nombre</th>
-                  <th>Precio VES</th>
-                  <th>Precio USD</th>
+                  <th>Precio BS</th>
                   <th>Estado</th>
                   <th>Acción</th>
                 </thead>
@@ -69,7 +68,6 @@
                           <td><?php echo $row['service_id']; ?></td>
                           <td><?php echo $row['name']; ?></td>
                           <td><?php echo number_format($row['price_ve'], 2); ?></td>
-                          <td><?php echo number_format($row['price_us'], 2); ?></td>
                           <td><?php echo $row['status'] ? 'Activo' : 'Inactivo'; ?></td>
                           <td>
                             <button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $row['serid']; ?>"><i class="fa fa-edit"></i> Editar</button>
@@ -122,7 +120,6 @@ function getRow(id){
       $('#service_name').html(response.name);
       $('#edit_name').val(response.name);
       $('#edit_price_ve').val(response.price_ve);
-      $('#edit_price_us').val(response.price_us);
       $('#status_val').val(response.status).html(Number(response.status) === 1 ? 'Activo' : 'Inactivo');
     }
   });

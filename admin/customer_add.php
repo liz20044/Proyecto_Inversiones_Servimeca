@@ -9,7 +9,7 @@
         $email = $_POST['email'];
         $document = $_POST['document'];
 
-		//creating customerid
+		//creando ID de cliente
 		$letters = '';
 		$numbers = '';
 		foreach (range('A', 'Z') as $char) {
@@ -19,7 +19,7 @@
 			$numbers .= $i;
 		}
 		$customer_id = substr(str_shuffle($letters), 0, 3).substr(str_shuffle($numbers), 0, 9);
-		//
+		
 		$sql = "INSERT INTO customers (customer_id, first_name, last_name, address, phone, email, document, created_at) VALUES ('$customer_id', '$first_name', '$last_name', '$address', '$phone', '$email', '$document', NOW())";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Cliente añadido satisfactoriamente';
@@ -30,7 +30,7 @@
 
 	}
 	else{
-		$_SESSION['error'] = 'Fill up add form first';
+		$_SESSION['error'] = 'Rellene el formulario de adición primero';
 	}
 
 	header('location: customer.php');

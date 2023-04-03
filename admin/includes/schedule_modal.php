@@ -10,20 +10,20 @@
           	<div class="modal-body">
             	<form class="form-horizontal" method="POST" action="schedule_add.php">
           		  <div class="form-group">
-                  	<label for="time_in" class="col-sm-3 control-label">Hora Entrada<span class="text-danger "> * </span></label>
+                  	<label for="time_in" class="col-sm-3 control-label">Tiempo Entrada<span class="text-danger "> * </span></label>
 
                   	<div class="col-sm-9">
                       <div class="bootstrap-timepicker">
-                    	 <input type="text" class="form-control timepicker" id="time_in" name="time_in" required>
+                    	 <input type="text" class="form-control timepicker" id="time_in" name="time_in" required maxlength="10">
                       </div>
                   	</div>
                 </div>
                 <div class="form-group">
-                    <label for="time_out" class="col-sm-3 control-label">Hora Salida<span class="text-danger "> * </span></label>
+                    <label for="time_out" class="col-sm-3 control-label">Tiempo Salida<span class="text-danger "> * </span></label>
 
                     <div class="col-sm-9">
                       <div class="bootstrap-timepicker">
-                        <input type="text" class="form-control timepicker" id="time_out" name="time_out" required>
+                        <input type="text" class="form-control timepicker" id="time_out" name="time_out" required maxlength="10">
                       </div>
                     </div>
                 </div>
@@ -51,20 +51,20 @@
             	<form class="form-horizontal" method="POST" action="schedule_edit.php">
             		<input type="hidden" id="timeid" name="id">
                 <div class="form-group">
-                    <label for="edit_time_in" class="col-sm-3 control-label">Hora Entrada<span class="text-danger "> * </span></label>
+                    <label for="edit_time_in" class="col-sm-3 control-label">Tiempo Entrada<span class="text-danger "> * </span></label>
 
                     <div class="col-sm-9">
                       <div class="bootstrap-timepicker">
-                        <input type="text" class="form-control timepicker" id="edit_time_in" name="time_in">
+                        <input type="text" class="form-control timepicker" id="edit_time_in" name="time_in" required maxlength="10" >
                       </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_time_out" class="col-sm-3 control-label">Hora Salida<span class="text-danger "> * </span></label>
+                    <label for="edit_time_out" class="col-sm-3 control-label">Tiempo Salida<span class="text-danger "> * </span></label>
 
                     <div class="col-sm-9">
                       <div class="bootstrap-timepicker">
-                        <input type="text" class="form-control timepicker" id="edit_time_out" name="time_out">
+                        <input type="text" class="form-control timepicker" id="edit_time_out" name="time_out" required maxlength="10">
                       </div>
                     </div>
                 </div>

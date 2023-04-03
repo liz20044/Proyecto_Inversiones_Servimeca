@@ -17,7 +17,7 @@
 		//creating employeeid
 			
 		//
-		$sql = "INSERT INTO employees (employee_id, firstname, lastname, address, birthdate, contact_info, gender, position_id, schedule_id, photo, created_on) VALUES ('$employee_id', '$firstname', '$lastname', '$address', '$birthdate', '$contact', '$gender', '$position', '$schedule', '$filename', NOW())";
+		$sql = "INSERT INTO employees (employee_id, firstname, lastname, address, birthdate, contact_info, gender, schedule_id, photo, created_on) VALUES ('$employee_id', '$firstname', '$lastname', '$address', '$birthdate', '$contact', '$gender', '$schedule', '$filename', NOW())";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Empleado añadido satisfactoriamente';
 		}

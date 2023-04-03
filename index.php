@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IS PROCESSS TALLER</title>
+    <title>IS PROCESS TALLER</title>
     <link rel="icon" href="images/logo.jpeg">
 	
     <!-- Tell the browser to be responsive to screen width -->
@@ -69,7 +69,7 @@
                         <div class="col-md-12">
                                     <a class="btn btn-dark " href="marcar.php">Trabajadores</a>
                                
-                                    <a class="btn btn-secondary" href="admin/">Administrador</a>
+                                    <a class="btn btn-secondary" href="admin/index.php">Administrador</a>
                         <hr>    
 
                         </div>  

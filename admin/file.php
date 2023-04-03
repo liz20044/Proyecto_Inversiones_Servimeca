@@ -13,12 +13,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Lista de Asignacion de Conceptos
+        Lista de Asignación de Conceptos
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li>Conceptos</li>
-        <li class="active">Lista de Asignacion de Conceptos</li>
+        <li class="active">Lista de Asignación de Conceptos</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -55,7 +55,7 @@
               <table id="example5" class="table table-bordered">
                 <thead>
                   <th>Empleado</th>
-                  <th>Fecha de Creacion</th>
+                  <th>Fecha de Creación</th>
                   <th>Acciones</th>
                 </thead>
                 <tbody>
@@ -69,7 +69,6 @@
                           <td><?php echo date('M d, Y', strtotime($row['created_on'])) ?></td>
                           <td>
                             <a class="btn btn-primary btn-sm btn-flat" href="file_detail.php?file=<?php echo $row['filid'] ?>"><i class="fa fa-eye"></i></a>
-                            <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['filid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>
                           </td>
                         </tr>
                       <?php
@@ -90,12 +89,43 @@
 <?php include 'includes/scripts.php'; ?>
 <script>
 $(function(){
-  $('.delete').click(function(e){
+  $('.edit').click(function(e){
     e.preventDefault();
-    $('#delete').modal('show');
+    $('#edit').modal('show');
     var id = $(this).data('id');
     getRow(id);
   });
+  $(function(){
+    $('.delete').click(function(e){
+      e.preventDefault();
+      $('#delete').modal('show');
+      var id = $(this).data('id');
+      getRow(id);
+    });
+});
+
+function getRow(id){
+  $.ajax({
+    type: 'POST',
+    url: 'employee_row.php',
+    data: {id:id},
+    dataType: 'json',
+    success: function(response){
+      $('.empid').val(response.empid);
+      $('.employee_id').html(response.employee_id);
+      $('.del_employee_name').html(response.firstname+' '+response.lastname);
+      $('#edit_employee').val(response.employee_id).html(response.employee_id);
+      $('#edit_firstname').val(response.firstname);
+      $('#edit_lastname').val(response.lastname);
+      $('#edit_address').val(response.address);
+      $('#datepicker_edit').val(response.birthdate);
+      $('#edit_contact').val(response.contact_info);
+      $('#gender_val').val(response.gender).html(response.gender);
+      $('#schedule_val').val(response.schedule_id).html(response.time_in+' - '+response.time_out);
+    }
+  });
+}
+
 
     let cartConcept = []
 

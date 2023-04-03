@@ -11,12 +11,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Lista de Reparaciones
+        Lista de Facturas
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
         <li>Reparaciones</li>
-        <li class="active">Lista de Reparaciones</li>
+        <li class="active">Lista de Facturas</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -46,16 +46,19 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
+            <div class="box-header with-border">
+              <a href="report_repairs.php" class="btn btn-success btn-sm btn-flat"><span class="glyphicon glyphicon-print"></span> Imprimir</a>
+            </div>
             <div class="box-body">
               <table id="example10" class="table table-bordered">
                 <thead>
-                  <th>ID Reparacion</th>
+                  <th>ID Reparación</th>
                   <th>Cliente</th>
-                  <th>Vehiculo</th>
+                  <th>Vehículo</th>
                   <th>Creado</th>
-                  <th>Total VES</th>
+                  <th>Total BS</th>
                   <th>Total USD</th>
-                  <th>Metodo de pago</th>
+                  <th>Método de pago</th>
                   <th>Referencia de pago</th>
                   <th>Acciones</th>
                 </thead>
@@ -75,8 +78,8 @@
                           <td><?php echo $row['pay_method'] ?></td>
                           <td><?php echo $row['pay_reference'] ?></td>
                           <td>
-                            <a class="text-success btn btn-primary" href="sale_detail.php?sale=<?php echo $row['salid'] ?>">Ver detalles</a>
-                          </td>
+                            <a class="text-success btn btn-primary" href="sale_detail.php?sale=<?php echo $row['salid'] ?>"><i class="fa fa-eye"></i></a>
+                            <button class="btn btn-danger btn-sm delete btn-flat" data-id="<?php echo $row['salid']; ?>"><i class="fa fa-trash"></i> Eliminar</button>   
                         </tr>
                       <?php
                     }
@@ -91,9 +94,46 @@
   </div>
 
   <?php include 'includes/footer.php'; ?>
-  <?php include 'includes/customer_modal.php'; ?>
+  <?php include 'includes/sale_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
+<script>
+$(function(){
+  $('.edit').click(function(e){
+    e.preventDefault();
+    $('#edit').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
+  });
+
+  $('.delete').click(function(e){
+    e.preventDefault();
+    $('#delete').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
+  });
+});
+
+function getRow(id){
+  $.ajax({
+    type: 'POST',
+    url: 'sale_row.php',
+    data: {id:id},
+    dataType: 'json',
+    success: function(response){
+      $('.salid').val(response.salid);
+      $('.sale_id').html(response.sale_id);
+      $('#edit_cliente').val(response.first_name+' '+response.last_name);
+      $('#edit_vehi').val(response.patent+' '+response.brand);
+      $('#edit_me').val(response.pay_method);
+      $('#edit_bs').val(response.total_ve);
+      $('#edit_us').val(response.total_us);
+      $('#edit_ref').val(response.pay_reference);
+    }
+  });
+}
+</script>
+
 <script> 
     $('#example10').DataTable( {
       reponsive: true,

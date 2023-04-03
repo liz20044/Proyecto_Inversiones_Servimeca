@@ -20,7 +20,7 @@
                           $query = $conn->query($sql);
                           while($prow = $query->fetch_assoc()){
                             echo "
-                              <option value='".$prow['id']."'>".$prow['firstname']. " " . $prow['lastname'] . "</option>
+                              <option value='".$prow['id']."'>".$prow['employee_id']. " - ".$prow['firstname']. " " . $prow['lastname'] . "</option>
                             ";
                           }
                         ?>
@@ -83,6 +83,8 @@
         </div>
     </div>
 </div>
+
+
 
 <!-- Delete -->
 <div class="modal fade" id="delete">

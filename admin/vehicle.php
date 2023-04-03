@@ -19,12 +19,12 @@ while($prow = $query->fetch_assoc()){
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Lista de Vehiculos
+        Lista de Vehículos
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li>Vehiculos</li>
-        <li class="active">Lista de Vehiculos</li>
+        <li>Vehículos</li>
+        <li class="active">Lista de Vehículos</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -60,7 +60,7 @@ while($prow = $query->fetch_assoc()){
             <div class="box-body">
               <table id="example8" class="table table-bordered">
                 <thead>
-                  <th>Matricula</th>
+                  <th>Matrícula</th>
                   <th>Marca</th>
                   <th>Modelo</th>
                   <th>Color</th>
@@ -167,26 +167,26 @@ function getRow(id){
 }
 </script>
 <script> 
-    $('#example8').DataTable( {
-      reponsive: true,
-      autoWidth: false,
+  $('#example8').DataTable( {
+    reponsive: true,
+    autoWidth: false,
 
-        "language": {
-          "lengthMenu": "Mostrar _MENU_ entradas",
-          "zeroRecords": "Nada encontrado - disculpa",
-          "info": "Mostrando la página _PAGE_ de _PAGES_",
-          "infoEmpty": "No hay registros disponibles",
-          "infoFiltered": "(filtrado de _MAX_ registros totales)",
-          "search":"Buscar:",
-          "paginate": {
-            "first":    "Primero",
-            "last":     "Último",
-            "next":     "Siguiente",
-            "previous": "Anterior"
-          },
-        } 
-      }
-    );
+      "language": {
+        "lengthMenu": "Mostrar _MENU_ entradas",
+        "zeroRecords": "Nada encontrado - disculpa",
+        "info": "Mostrando la página _PAGE_ de _PAGES_",
+        "infoEmpty": "No hay registros disponibles",
+        "infoFiltered": "(filtrado de _MAX_ registros totales)",
+        "search":"Buscar:",
+        "paginate": {
+          "first":    "Primero",
+          "last":     "Último",
+          "next":     "Siguiente",
+          "previous": "Anterior"
+        },
+      } 
+    }
+  );
 </script>
 </body>
 </html>

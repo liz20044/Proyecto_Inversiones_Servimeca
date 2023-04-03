@@ -13,14 +13,14 @@
                   	<label for="name" class="col-sm-3 control-label">Nombre del concepto<span class="text-danger "> * </span></label>
 
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="name" name="name" required  placeholder="Ej. Seguro social">
+                    	<input type="text" class="form-control" id="name" name="name" required  placeholder="Ej. Seguro social"  maxlength="30">
                   	</div>
                 </div>
                 <div class="form-group">
                   	<label for="amount" class="col-sm-3 control-label">Monto Bs<span class="text-danger "> * </span></label>
 
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="amount" name="amount" required  placeholder="Ej. 200.00">
+                    	<input type="number" class="form-control" id="amount" name="amount" required  placeholder="Ej. 200.00"  maxlength="20" oninput="maxlengthNumber(this);">
                   	</div>
                 </div>
                 <div class="form-group">
@@ -60,14 +60,14 @@
                     <label for="edit_name" class="col-sm-3 control-label">Nombre del concepto<span class="text-danger "> * </span></label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_name" name="edit_name">
+                      <input type="text" required class="form-control" id="edit_name" name="edit_name" maxlength="30">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="edit_amount" class="col-sm-3 control-label">Monto Bs<span class="text-danger "> * </span></label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_amount" name="edit_amount">
+                      <input type="number" required class="form-control" id="edit_amount" name="edit_amount" maxlength="20" oninput="maxlengthNumber(this);">
                     </div>
                 </div>
                 <div class="form-group">
@@ -117,3 +117,11 @@
         </div>
     </div>
 </div>
+<script>
+function maxlengthNumber (obj) {
+  console.log(obj.value);
+  if(obj.value.length > obj.maxLength ){
+    obj.value = obj.value.slice(0, obj.maxLength);
+  }
+}
+</script>

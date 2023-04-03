@@ -13,21 +13,14 @@
                   	<label for="name" class="col-sm-3 control-label">Nombre del servicio<span class="text-danger "> * </span></label>
 
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="name" name="name" required placeholder="Ej. Cambio de aceite">
+                    	<input type="text" class="form-control" id="name" name="name" required placeholder="Ej. Cambio de aceite"maxlength="30">
                   	</div>
                 </div>
                 <div class="form-group">
                   	<label for="price_ve" class="col-sm-3 control-label">Precio en bolivares<span class="text-danger "> * </span></label>
 
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="price_ve" name="price_ve" required placeholder="Ej. 200.00">
-                  	</div>
-                </div>
-                <div class="form-group">
-                  	<label for="price_us" class="col-sm-3 control-label">Precio en dolares<span class="text-danger ">*</span></label>
-
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="price_us" name="price_us" required placeholder="Ej. 10">
+                    	<input type="number" class="form-control" id="price_ve" name="price_ve" required placeholder="Ej. 200.00" maxlength="20" oninput="maxlengthNumber(this);">
                   	</div>
                 </div>
                 <div class="form-group">
@@ -68,21 +61,14 @@
                     <label for="edit_name" class="col-sm-3 control-label">Nombre del servicio<span class="text-danger "> * </span></label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_name" name="edit_name">
+                      <input type="text" class="form-control" id="edit_name" name="edit_name" required maxlength="30">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="edit_price_ve" class="col-sm-3 control-label">Precios en bolivares<span class="text-danger "> * </span></label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_price_ve" name="edit_price_ve">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="edit_price_us" class="col-sm-3 control-label">Precios en dolares<span class="text-danger "> * </span></label>
-
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_price_us" name="edit_price_us">
+                      <input type="number" class="form-control" id="edit_price_ve" name="edit_price_ve" required maxlength="20" oninput="maxlengthNumber(this);">
                     </div>
                 </div>
                 <div class="form-group">
@@ -132,3 +118,11 @@
         </div>
     </div>
 </div>
+<script>
+function maxlengthNumber (obj) {
+  console.log(obj.value);
+  if(obj.value.length > obj.maxLength ){
+    obj.value = obj.value.slice(0, obj.maxLength);
+  }
+}
+</script>

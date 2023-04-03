@@ -15,7 +15,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li>Concetos</li>
+        <li>Conceptos</li>
         <li class="active">Detalle de Conceptos Asignados</li>
       </ol>
     </section>
@@ -47,13 +47,13 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header text-center">
-                <h3>Asignacion de Concepto</h3>
+                <h3>Asignación de Concepto</h3>
             </div>
             <div class="box-body">
               <table class="table table-bordered">
                 <thead>
-                  <th>Cliente</th>
-                  <th>Fecha de Creacion</th>
+                  <th>Empleado</th>
+                  <th>Fecha de Creación</th>
                 </thead>
                 <tbody>
                   <?php
@@ -81,7 +81,7 @@
                 <h3>Conceptos</h3>
             </div>
             <div class="box-body">
-              <table id="example1" class="table table-bordered">
+              <table id="example15" class="table table-bordered">
                 <thead>
                   <th>Nombre</th>
                   <th>Monto</th>
@@ -114,6 +114,28 @@
   <?php include 'includes/footer.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>
+<script> 
+    $('#example15').DataTable( {
+      reponsive: true,
+      autoWidth: false,
+
+        "language": {
+          "lengthMenu": "Mostrar _MENU_ entradas",
+          "zeroRecords": "Nada encontrado - disculpa",
+          "info": "Mostrando la página _PAGE_ de _PAGES_",
+          "infoEmpty": "No hay registros disponibles",
+          "infoFiltered": "(filtrado de _MAX_ registros totales)",
+          "search":"Buscar:",
+          "paginate": {
+            "first":    "Primero",
+            "last":     "Último",
+            "next":     "Siguiente",
+            "previous": "Anterior"
+          },
+        } 
+      }
+    );
+</script>
 </body>
 </html>
 

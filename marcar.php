@@ -13,22 +13,12 @@
   	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   	<!-- Font Awesome -->
   	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-  	<!-- Theme style -->
-  	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  	<!--[if lt IE 9]>
-  	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  	<![endif]-->
 
   	<!-- Google Font -->
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
   	<style type="text/css">
-            /*
-      * Page: Login & Register
-      * ----------------------
-      */
+            /* Page: Login */
       .login-logo,
       .register-logo {
         font-size: 35px;
@@ -60,7 +50,6 @@
       .login-box-body,
       .register-box-body {
         border-radius:5px;
-
         background: #fff;
         padding: 20px;
         border-top: 0;
@@ -93,49 +82,47 @@
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
-  	<div class="login-logo">
+  <div class="login-logo">
   		<p id="date"></p>
       <p id="time" class="bold"></p>
-  	</div>
+  </div>
   
-  	<div class="login-box-body">
-    	<h4 class="login-box-msg">Ingrese su Cédula</h4>
-
-    	<form id="attendance">
-          <div class="form-group">
-            <select class="form-control" name="status">
-              <option value="in">Hora de Entrada</option>
-              <option value="out">Hora de Salida</option>
-            </select>
+  <div class="login-box-body">
+    <h4 class="login-box-msg">Ingrese su Cédula</h4>
+    <form id="attendance">
+        <div class="form-group">
+          <select class="form-control" name="status">
+            <option value="in">Hora de Entrada</option>
+            <option value="out">Hora de Salida</option>
+          </select>
+        </div>
+        <div class="form-group has-feedback">
+          <input type="text" class="form-control input-lg" placeholder="Cédula " id="employee" name="employee" required>
+          <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+        </div>
+        <div class="row">
+        <div class="col-xs-4">
+              <button type="submit" class="btn btn-primary btn-block btn-flat" name="signin"><i class="fa fa-sign-in"></i> Marcar</button>
           </div>
-      		<div class="form-group has-feedback">
-        		<input type="text" class="form-control input-lg" placeholder="Cédula " id="employee" name="employee" required>
-        		<span class="glyphicon glyphicon-calendar form-control-feedback"></span>
-      		</div>
-      		<div class="row">
-    			<div class="col-xs-4">
-          			<button type="submit" class="btn btn-primary btn-block btn-flat" name="signin"><i class="fa fa-sign-in"></i> Marcar</button>
-        		</div>
-      		</div>
-    	</form>
-  	</div>
-		<div class="alert alert-success alert-dismissible mt20 text-center" style="display:none;">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <span class="result"><i class="icon fa fa-check"></i> <span class="message"></span></span>
-    </div>
-		<div class="alert alert-danger alert-dismissible mt20 text-center" style="display:none;">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <span class="result"><i class="icon fa fa-warning"></i> <span class="message"></span></span>
-    </div>
-  		
+        </div>
+    </form>
+  </div>
+  <div class="alert alert-success alert-dismissible mt20 text-center" style="display:none;">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <span class="result"><i class="icon fa fa-check"></i> <span class="message"></span></span>
+  </div>
+  <div class="alert alert-danger alert-dismissible mt20 text-center" style="display:none;">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <span class="result"><i class="icon fa fa-warning"></i> <span class="message"></span></span>
+  </div> 		
 </div>
 	
-<?php include 'scripts.php' ?>
+<?php include 'scripts.php'; ?>
 <script type="text/javascript">
 $(function() {
   var interval = setInterval(function() {
     var momentNow = moment();
-    $('#date').html(momentNow.format('dddd').substring(0,3).toUpperCase() + ' - ' + momentNow.format('MMMM DD, YYYY'));  
+    $('#date').html(momentNow.format('dddd').substring(0,3).toUpperCase() + ' - ' + momentNow.format('DD/ MM/ YYYY'));  
     $('#time').html(momentNow.format('hh:mm:ss A'));
   }, 100);
 
@@ -161,8 +148,7 @@ $(function() {
         }
       }
     });
-  });
-    
+  });   
 });
 </script>
 </body>

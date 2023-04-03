@@ -6,9 +6,7 @@
   <?php include 'includes/navbar.php'; ?>
   <?php include 'includes/menubar.php'; ?>
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
       Asistencia
@@ -18,7 +16,6 @@
         <li class="active">Asistencia</li>
       </ol>
     </section>
-    <!-- Main content -->
     <section class="content">
       <?php
         if(isset($_SESSION['error'])){
@@ -46,7 +43,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="schedule_print.php" class="btn btn-success btn-sm btn-flat"><span class="glyphicon glyphicon-print"></span> Imprimir</a>
+              <a href="attendance_report.php" class="btn btn-success btn-sm btn-flat"><span class="glyphicon glyphicon-print"></span> Imprimir</a>
               <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Nuevo</a>
             </div>
             <div class="box-body">
@@ -68,13 +65,11 @@
                       echo "
                         <tr>
                           <td class='hidden'></td>
-                          <td>".date('M d, Y', strtotime($row['date']))."</td>
+                          <td>".date('d/m/Y', strtotime($row['date']))."</td>
                           <td>".$row['empid']."</td>
                           <td>".$row['firstname'].' '.$row['lastname']."</td>
                           <td>".date('h:i A', strtotime($row['time_in'])).$status."</td>
                           <td>".date('h:i A', strtotime($row['time_out']))."</td>
-                          <td>
-                          </td>
                         </tr>
                       ";
                     }

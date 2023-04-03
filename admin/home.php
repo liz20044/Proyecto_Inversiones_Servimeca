@@ -11,15 +11,10 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-  	<?php include 'includes/navbar.php'; ?>
-  	<?php include 'includes/menubar.php'; ?>
+  <?php include 'includes/navbar.php'; ?>
+  <?php include 'includes/menubar.php'; ?>
 
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    
-
-    <!-- Main content -->
     <section class="content">
       <?php
         if(isset($_SESSION['error'])){
@@ -77,10 +72,9 @@
           </div>
         </div>
       </div><br>
-      <!-- Small boxes (Stat box) -->
+      <!-- Cajas pequeñas (caja de estadísticas) -->
       <div class="row">
         <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
               <?php
@@ -89,7 +83,6 @@
 
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
-
               <p>Total de Clientes</p>
             </div>
             <div class="icon">
@@ -98,9 +91,7 @@
             <a href="customer.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
               <?php
@@ -109,7 +100,6 @@
 
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
-          
               <p>Vehiculos en el Taller</p>
             </div>
             <div class="icon">
@@ -118,9 +108,7 @@
             <a href="vehicle.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
               <?php
@@ -128,9 +116,8 @@
                 $query = $conn->query($sql);
 
                 echo "<h3>".$query->num_rows."</h3>";
-              ?>
-             
-              <p>Reparaciones en Proceso</p>
+              ?>   
+              <p>Facturas Generadas</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
@@ -138,9 +125,7 @@
             <a href="sale.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
               <?php
@@ -158,18 +143,14 @@
             <a href="attendance.php" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        <!-- ./col -->
-      </div>
-      <!-- /.row -->                  
-      </section>
-      <!-- right col -->
-    </div>
-  	<?php include 'includes/footer.php'; ?>
-
+      </div>                 
+    </section>
+  </div>
+	<?php include 'includes/footer.php'; ?>
 </div>
-<!-- ./wrapper -->
 
-<!-- Chart Data -->
+
+<!-- Datos del gráfico -->
 <?php
   $and = 'AND YEAR(date) = '.$year;
   $months = array();
@@ -194,7 +175,7 @@
   $ontime = json_encode($ontime);
 
 ?>
-<!-- End Chart Data -->
+<!-- Fin de los datos del gráfico -->
 <?php include 'includes/scripts.php'; ?>
 <script>
 $(function(){
@@ -229,29 +210,29 @@ $(function(){
   barChartData.datasets[1].strokeColor = '#00a65a'
   barChartData.datasets[1].pointColor  = '#00a65a'
   var barChartOptions                  = {
-    //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+    //Booleano: si la escala debe comenzar en cero o en un orden de magnitud hacia abajo desde el valor más bajo
     scaleBeginAtZero        : true,
-    //Boolean - Whether grid lines are shown across the chart
+    //Booleano: si las líneas de cuadrícula se muestran en el gráfico
     scaleShowGridLines      : true,
-    //String - Colour of the grid lines
+    //String - Color de las líneas de la cuadrícula
     scaleGridLineColor      : 'rgba(0,0,0,.05)',
-    //Number - Width of the grid lines
+    //Número - Ancho de las líneas de la cuadrícula
     scaleGridLineWidth      : 1,
-    //Boolean - Whether to show horizontal lines (except X axis)
+    //Booleano: si mostrar líneas horizontales (excepto el eje X)
     scaleShowHorizontalLines: true,
-    //Boolean - Whether to show vertical lines (except Y axis)
+    //Booleano: si mostrar líneas verticales (excepto el eje Y)
     scaleShowVerticalLines  : true,
-    //Boolean - If there is a stroke on each bar
+    //Booleano: si hay un trazo en cada barra
     barShowStroke           : true,
-    //Number - Pixel width of the bar stroke
+    //Número - Ancho de píxel del trazo de la barra
     barStrokeWidth          : 2,
-    //Number - Spacing between each of the X value sets
+    //Número - Espacio entre cada uno de los conjuntos de valores X
     barValueSpacing         : 5,
-    //Number - Spacing between data sets within X values
+    //Número - Espaciado entre conjuntos de datos dentro de valores X
     barDatasetSpacing       : 1,
-    //String - A legend template
+    //String - Una plantilla de leyenda
     legendTemplate          : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].fillColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
-    //Boolean - whether to make the chart responsive
+    //Booleano: si hacer que el gráfico responda
     responsive              : true,
     maintainAspectRatio     : true
   }

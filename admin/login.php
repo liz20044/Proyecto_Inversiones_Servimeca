@@ -6,7 +6,7 @@
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
-		$sql = "SELECT * FROM admin WHERE username = '$username'";
+		$sql = "SELECT * FROM users WHERE username = '$username'";
 		$query = $conn->query($sql);
 
 		if($query->num_rows < 1){
@@ -30,3 +30,8 @@
 	header('location: index.php');
 
 ?>
+
+
+
+
+

@@ -4,7 +4,6 @@
 	if(isset($_POST['add'])){
 		$name = $_POST['name'];
 		$price_ve = $_POST['price_ve'];
-		$price_us = $_POST['price_us'];
         $status = $_POST['status'];
 
 		//creating customerid
@@ -18,7 +17,7 @@
 		}
 		$service_id = substr(str_shuffle($letters), 0, 3).substr(str_shuffle($numbers), 0, 9);
 		//
-		$sql = "INSERT INTO services (service_id, name, price_ve, price_us, status) VALUES ('$service_id', '$name', '$price_ve', '$price_us', '$status')";
+		$sql = "INSERT INTO services (service_id, name, price_ve, status) VALUES ('$service_id', '$name', '$price_ve', '$status')";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Servicio añadido satisfactoriamente';
 		}
@@ -28,7 +27,7 @@
 
 	}
 	else{
-		$_SESSION['error'] = 'Fill up add form first';
+		$_SESSION['error'] = 'Rellene el formulario de adición primero';
 	}
 
 	header('location: service.php');

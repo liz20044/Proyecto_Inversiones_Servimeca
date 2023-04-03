@@ -11,12 +11,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Lista de Nominas
+        Lista de Nóminas
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li>Nominas</li>
-        <li class="active">Lista de Nominas</li>
+        <li>Nóminas</li>
+        <li class="active">Lista de Nóminas</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -49,7 +49,7 @@
             <div class="box-body">
               <table id="example6" class="table table-bordered">
                 <thead>
-                  <th>ID Nomina</th>
+                  <th>ID Nómina</th>
                   <th>Fecha de pago</th>
                   <th>Monto Bs</th>
                   <th>Acciones</th>

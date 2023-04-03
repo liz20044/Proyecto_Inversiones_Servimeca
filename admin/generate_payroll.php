@@ -12,12 +12,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Generar Nomina
+        Generar Nómina
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li>Nomina</li>
-        <li class="active">Generar Nomina</li>
+        <li>Nómina</li>
+        <li class="active">Generar Nómina</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -47,16 +47,16 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
-            <div class="box-body">
+            <div class="box-body text-center">
                 <form method="POST" action="payroll_add.php">
                     <div class="form-group">
                         <label for="customer" class="control-label">Fecha</label>
-                        <input class="form-control" type="date" name="date_pay" id="date_pay" min="<?php echo date('Y-m-d') ?>" value="<?php echo date('Y-m-d') ?>">
+                        <center><input style="width:400px" class="form-control" type="date" name="date_pay" id="date_pay" min="<?php echo date('Y-m-d') ?>" value="<?php echo date('Y-m-d') ?>"></center>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary btn-block" type="submit" name="add">
+                        <button class="btn btn-primary btn-sm" type="submit" name="add">
                             <i class="fa fa-floppy-o"></i>
-                            Generar nomina
+                            Generar nómina
                         </button>
                     </div>
                 </form>

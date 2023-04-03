@@ -67,17 +67,17 @@
 
 		<img src="../images/logo.jpeg" class="img-circle profile_img ">
 
-			<b>Ingreso Administrador</b>
+			<h2><b>Inicio de Sesión</b></h2>
 
 		</div>
 	  	
     	<form action="login.php" method="POST">
       		<div class="form-group has-feedback">
-        		<input type="text" class="form-control" name="username" placeholder="Usuario" required autofocus>
+        		<input type="text" class="form-control" name="username" placeholder="Usuario" required autofocus maxlength="30">
         		<span class="glyphicon glyphicon-user form-control-feedback"></span>
       		</div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" name="password" placeholder="Contraseña" required>
+            <input type="password" class="form-control" name="password" placeholder="Contraseña" required maxlength="8">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
       		<div class="row">
@@ -86,9 +86,9 @@
         		</div>
       		</div>
 			 	<div class="text-center">
-                            <h3><i class="fa fa-gear text-center"></i> Inversiones Servimeca, C.A</h3>
-                            <p>©2022 Derechos Reservados. UPTA "Federico Brito Figueroa"</p>
-            	</div>
+          <h3><i class="fa fa-gear text-center"></i> Inversiones Servimeca, C.A</h3>
+          <p>©2022 Derechos Reservados. UPTA "Federico Brito Figueroa"</p>
+        </div>
     	</form>
   	</div>
   	<?php

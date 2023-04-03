@@ -13,28 +13,28 @@
                   	<label for="employee_id" class="col-sm-3 control-label">Cédula<span class="text-danger "> * </span></label>
 
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="employee_id" name="employee_id" required placeholder="V-30577893">
+                    	<input type="text" class="form-control" id="employee_id" name="employee_id" required placeholder="V-30577893" maxlength="10">
                   	</div>
                 </div>
           		  <div class="form-group">
                   	<label for="firstname" class="col-sm-3 control-label">Nombre<span class="text-danger "> * </span></label>
 
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="firstname" name="firstname" required placeholder="Ej. Ana">
+                    	<input type="text" class="form-control" id="firstname" name="firstname" required placeholder="Ej. Ana" maxlength="20">
                   	</div>
                 </div>
                 <div class="form-group">
                   	<label for="lastname" class="col-sm-3 control-label">Apellido<span class="text-danger "> * </span></label>
 
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="lastname" name="lastname" required placeholder="Ej. Rodriguez">
+                    	<input type="text" class="form-control" id="lastname" name="lastname" required placeholder="Ej. Rodriguez" maxlength="20">
                   	</div>
                 </div>
                 <div class="form-group">
                   	<label for="address" class="col-sm-3 control-label">Dirección<span class="text-danger "> * </span></label>
 
                   	<div class="col-sm-9">
-                      <textarea class="form-control" name="address" id="address" placeholder="Ej. La mora, Av 20 Casa nro 10"></textarea>
+                      <textarea class="form-control" name="address" id="address" required placeholder="Ej. La mora, Av 20 Casa nro 10" maxlength="50"></textarea>
                   	</div>
                 </div>
                 <div class="form-group">
@@ -42,15 +42,15 @@
 
                   	<div class="col-sm-9"> 
                       <div class="date">
-                        <input type="text" class="form-control" id="datepicker_add" name="birthdate" placeholder="Ej. 2004-05-23">
+                        <input type="text" class="form-control" id="datepicker_add" name="birthdate" required placeholder="Ej. 2004-05-23" maxlength="20">
                       </div>
                   	</div>
                 </div>
                 <div class="form-group">
-                    <label for="contact" class="col-sm-3 control-label">Información de Contacto<span class="text-danger "> * </span></label>
+                    <label for="contact" class="col-sm-3 control-label">Télefono<span class="text-danger "> * </span></label>
 
                     <div class="col-sm-9">
-                      <input type="number" class="form-control" id="contact" name="contact" placeholder="Ej. 0416-5448236">
+                      <input type="number" class="form-control" id="contact" name="contact" required placeholder="Ej. 0416-5448236" maxlength="11" oninput="maxlengthNumber(this);">
                     </div>
                 </div>
                 <div class="form-group">
@@ -59,8 +59,8 @@
                     <div class="col-sm-9"> 
                       <select class="form-control" name="gender" id="gender" required>
                         <option value="" selected>- Seleccionar -</option>
-                        <option value="Male">Hombre</option>
-                        <option value="Female">Mujer</option>
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer">Mujer</option>
                       </select>
                     </div>
                 </div>
@@ -113,31 +113,31 @@
             	<form class="form-horizontal" method="POST" action="employee_edit.php">
             		<input type="hidden" class="empid" name="id">
                 <div class="form-group">
-                  	<label for="employee_id" class="col-sm-3 control-label">Cédula<span class="text-danger "> * </span></label>
+                  	<label for="edit_employee" class="col-sm-3 control-label">Cédula<span class="text-danger "> * </span></label>
 
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="employee_id" name="employee_id" required>
+                    	<input type="text" class="form-control" id="edit_employee" name="employee_id" required maxlength="10">
                   	</div>
                 </div>
                 <div class="form-group">
                     <label for="edit_firstname" class="col-sm-3 control-label">Nombre<span class="text-danger "> * </span></label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_firstname" name="firstname">
+                      <input type="text" class="form-control" id="edit_firstname" name="firstname" required maxlength="20" >
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="edit_lastname" class="col-sm-3 control-label">Apellido<span class="text-danger "> * </span></label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_lastname" name="lastname">
+                      <input type="text" class="form-control" id="edit_lastname" name="lastname" required maxlength="20">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="edit_address" class="col-sm-3 control-label">Dirección<span class="text-danger "> * </span></label>
 
                     <div class="col-sm-9">
-                      <textarea class="form-control" name="address" id="edit_address"></textarea>
+                      <textarea class="form-control" name="address" id="edit_address" required maxlength="50"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
@@ -145,25 +145,25 @@
 
                     <div class="col-sm-9"> 
                       <div class="date">
-                        <input type="text" class="form-control" id="datepicker_edit" name="birthdate">
+                        <input type="text" class="form-control" id="datepicker_edit" name="birthdate" required maxlength="20">
                       </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_contact" class="col-sm-3 control-label">Información de Contacto<span class="text-danger "> * </span></label>
+                    <label for="edit_contact" class="col-sm-3 control-label">Télefono<span class="text-danger "> * </span></label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_contact" name="contact">
+                      <input type="number" class="form-control" id="edit_contact" name="contact" required  maxlength="11" oninput="maxlengthNumber(this);">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="edit_gender" class="col-sm-3 control-label">Género<span class="text-danger "> * </span></label>
 
                     <div class="col-sm-9"> 
-                      <select class="form-control" name="gender" id="edit_gender">
+                      <select class="form-control" name="gender" id="edit_gender" required>
                         <option selected id="gender_val"></option>
-                        <option value="Male">Hombre</option>
-                        <option value="Female">Mujer</option>
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer">Mujer</option>
                       </select>
                     </div>
                 </div>
@@ -171,7 +171,7 @@
                     <label for="edit_schedule" class="col-sm-3 control-label">Horario<span class="text-danger "> * </span></label>
 
                     <div class="col-sm-9">
-                      <select class="form-control" id="edit_schedule" name="schedule">
+                      <select class="form-control" id="edit_schedule" name="schedule" required>
                         <option selected id="schedule_val"></option>
                         <?php
                           $sql = "SELECT * FROM schedules";
@@ -225,30 +225,38 @@
 
 <!-- Update Photo -->
 <div class="modal fade" id="edit_photo">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b><span class="del_employee_name"></span></b></h4>
-            </div>
-            <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="employee_edit_photo.php" enctype="multipart/form-data">
-                <input type="hidden" class="empid" name="id">
-                <div class="form-group">
-                    <label for="photo" class="col-sm-3 control-label">Foto</label>
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title"><b><span class="del_employee_name"></span></b></h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" method="POST" action="employee_edit_photo.php" enctype="multipart/form-data">
+              <input type="hidden" class="empid" name="id">
+              <div class="form-group">
+                  <label for="photo" class="col-sm-3 control-label">Foto</label>
 
-                    <div class="col-sm-9">
-                      <input type="file" id="photo" name="photo" required>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
-              <button type="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Actualizar</button>
-              </form>
-            </div>
-        </div>
-    </div>
-</div>    
-<!-- Ver -->
+                  <div class="col-sm-9">
+                    <input type="file" id="photo" name="photo" required>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
+            <button type="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Actualizar</button>
+            </form>
+          </div>
+      </div>
+  </div>
+</div> 
+
+<script>
+function maxlengthNumber (obj) {
+  console.log(obj.value);
+  if(obj.value.length > obj.maxLength ){
+    obj.value = obj.value.slice(0, obj.maxLength);
+  }
+}
+</script>

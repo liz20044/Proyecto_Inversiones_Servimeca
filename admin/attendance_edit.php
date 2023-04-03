@@ -22,9 +22,8 @@
 			$query = $conn->query($sql);
 			$srow = $query->fetch_assoc();
 
-			//updates
+			//actualizaciones
 			$logstatus = ($time_in > $srow['time_in']) ? 0 : 1;
-			//
 
 			if($srow['time_in'] > $time_in){
 				$time_in = $srow['time_in'];

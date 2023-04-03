@@ -26,13 +26,13 @@
 				$_SESSION['error'] = 'La asistencia de los empleados para el día existe.';
 			}
 			else{
-				//updates
+				//actualizaciones
 				$sched = $row['schedule_id'];
 				$sql = "SELECT * FROM schedules WHERE id = '$sched'";
 				$squery = $conn->query($sql);
 				$scherow = $squery->fetch_assoc();
 				$logstatus = ($time_in > $scherow['time_in']) ? 0 : 1;
-				//
+
 				$sql = "INSERT INTO attendance (employee_id, date, time_in, time_out, status) VALUES ('$emp', '$date', '$time_in', '$time_out', '$logstatus')";
 				if($conn->query($sql)){
 					$_SESSION['success'] = 'Asistencia añadida con éxito';
