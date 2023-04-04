@@ -5,10 +5,9 @@
 		$serid = $_POST['id'];
 		$edit_name = $_POST['edit_name'];
 		$price_ve = $_POST['edit_price_ve'];
-		$price_us = $_POST['edit_price_us'];
 		$status = $_POST['edit_status'];
 
-		$sql = "UPDATE services SET name = '$edit_name', price_ve = '$price_ve', price_us = '$price_us', status = '$status' WHERE id = '$serid'";
+		$sql = "UPDATE services SET name = '$edit_name', price_ve = '$price_ve', status = '$status' WHERE id = '$serid'";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Servicio actualizado con éxito';
 		}
