@@ -97,7 +97,7 @@
         } 
       ?>
 
-      <li><a href="../Manual de Instalación IS Process Taller.docx"><i class="fa fa-clock-o"></i> <span>Ayuda</span></a></li>
+      <li><a href="../Manual de Instalación IS Process Taller.pdf"><i class="fa fa-clock-o"></i> <span>Ayuda</span></a></li>
     </ul>
   <!-- /.sidebar -->
 </aside>
