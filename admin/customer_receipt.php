@@ -92,14 +92,12 @@ $pdf->SetFillColor(233,229,235);
     $pdf->Cell(50,8,utf8_decode('ID Servicio'), 1, 0,"C",1);
     $pdf->Cell(60,8,utf8_decode('Nombre'), 1, 0,"C",1);   
     $pdf->Cell(30,8,utf8_decode('Precio BS'), 1, 0,"C",1);  
-    $pdf->Cell(30,8,utf8_decode('Precio USD'), 1, 0,"C",1); 
     $pdf->Cell(30,8,utf8_decode('Estado'), 1, 1,"C",1);
 
 while ($fila = $resultado2->fetch_assoc()) {
 	$pdf->Cell(50,8,utf8_decode($fila['service_id']), 'B', 0,"C"); 
     $pdf->Cell(60,8,utf8_decode($fila['name']), 'B', 0,"C");
 	$pdf->Cell(30,8,utf8_decode($fila['total_ve']), 'B', 0,"C");  
-    $pdf->Cell(30,8,utf8_decode($fila['total_us']), 'B', 0,"C"); 
 	$pdf->Cell(30,8,utf8_decode($fila['status']) ? 'Activo' : 'Inactivo', 'B',1,"C"); 
 }
 $pdf->Ln(35);
