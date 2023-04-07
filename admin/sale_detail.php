@@ -98,7 +98,6 @@
                   <th>ID Servicio</th>
                   <th>Nombre</th>
                   <th>Precio BS</th>
-                  <th>Precio USD</th>
                   <th>Estado</th>
                 </thead>
                 <tbody>
@@ -111,7 +110,6 @@
                           <td><?php echo $row['service_id']; ?></td>
                           <td><?php echo $row['name']; ?></td>
                           <td><?php echo number_format($row['total_ve'], 2); ?></td>
-                          <td><?php echo number_format($row['total_us'], 2); ?></td>
                           <td><?php echo $row['status'] ? 'Activo' : 'Inactivo'; ?></td>
                         </tr>
                       <?php
